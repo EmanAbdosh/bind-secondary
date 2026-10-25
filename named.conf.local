@@ -1,0 +1,13 @@
+include "/etc/bind/xfr.key";
+server 192.168.30.10 { keys xfrkey; };
+
+zone "lab.eabdosh.300.ops" {
+	type slave;
+	file "/var/cache/bind/db.lab.eabdosh.300.ops";
+	masters { 192.168.30.10; };
+};
+zone "30.168.192.in-addr.arpa" {
+	type slave;
+	file "/var/cache/bind/db.30.168.192";
+	masters { 192.168.30.10; };
+};

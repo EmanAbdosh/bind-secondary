@@ -1,0 +1,19 @@
+options {
+    directory "/var/cache/bind";
+
+    recursion no;
+    allow-query-cache { none; };
+
+    blackhole {
+        10/8;
+        172.16/12;
+        224/8;
+        169.254/16;
+    };
+
+    listen-on { any; };
+    allow-query { 192.168.30.0/24; localhost; };
+    allow-transfer { none; };
+
+    dnssec-validation no;
+};
