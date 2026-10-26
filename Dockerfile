@@ -1,4 +1,5 @@
 FROM ubuntu:26.04
+RUN rm -f /usr/bin/pebble
 RUN apt-get update && \
     apt-get install -y --no-install-recommends bind9 bind9utils dnsutils && \
     rm -rf /var/lib/apt/lists/*
